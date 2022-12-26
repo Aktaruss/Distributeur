@@ -2,7 +2,7 @@
  * 
  */
 /**
- * @author Robin
+ * @author Anita
  *
  */
 module Distributeur {

@@ -1,79 +1,67 @@
 package stock;
 
 public class Stock {
-	private int viande;
-	private int legumeVerts;
-	private int huileColza;
-	private int pates;
+	private int nbMaxMarchandises = 10;
+	private int nbViande = 0;
+	private int nbPate = 0;
+	private int nbLegume = 0;
+	private int nbHuile = 0;
+	private int nbMarchandises = 0;
+	private Marchandises[] entrepot = new Marchandises[nbMaxMarchandises];
 
-	public Stock(int viande, int legumeVerts, int huileColza, int pates) {
-		super();
-		this.viande = viande;
-		this.legumeVerts = legumeVerts;
-		this.huileColza = huileColza;
-		this.pates = pates;
+	public int getNbMaxMarxhandises() {
+		return nbMaxMarchandises;
 	}
 
-	public int getViande() {
-		return viande;
+	public int getNbViande() {
+		return nbViande;
 	}
 
-	public void setViande(int viande) {
-		this.viande = viande;
+	public int getNbPate() {
+		return nbPate;
 	}
 
-	public int getLegumeVerts() {
-		return legumeVerts;
+	public int getNbLegume() {
+		return nbLegume;
 	}
 
-	public void setLegumeVerts(int legumeVerts) {
-		this.legumeVerts = legumeVerts;
+	public int getNbHuile() {
+		return nbHuile;
 	}
 
-	public int getHuileColza() {
-		return huileColza;
-	}
-
-	public void setHuileColza(int huileColza) {
-		this.huileColza = huileColza;
-	}
-
-	public int getPates() {
-		return pates;
-	}
-
-	public void setPates(int pates) {
-		this.pates = pates;
+	public int getNbMarchandises() {
+		return nbMarchandises;
 	}
 
 	public void afficher(String texte) {
 		System.out.println(texte);
 	}
 
-	public void ajouter(int ajout, String nom) {
-		switch (nom) {
-		case "viande":
-			setViande(ajout + viande);
-			afficher("La viande est maintenant a " + viande + " kilos.");
-			break;
-		case "legume":
-			setLegumeVerts(ajout + legumeVerts);
-			afficher("Les legume sont maintenant a " + legumeVerts + " kilos.");
-			break;
-		case "huile":
-			setHuileColza(ajout + huileColza);
-			afficher("L huile est maintenant a " + huileColza + " litre.");
-			break;
-		case "pate":
-			setViande(ajout + viande);
-			afficher("Les pates sont maintenant a " + pates + " kilos.");
-			break;
-
-		default:
-			break;
+	public void afficherStock() {
+		if (nbMarchandises <= 0) {
+			afficher("Il n y a pas de marchandise dans cette machine");
+		} else {
+			afficher("Dans ce stock : ");
+			for (int i = 0; i < nbMarchandises; i++) {
+				entrepot[i].afficherMarchandise();
+			}
 		}
 	}
 
-	
-	
+	public void ajouterNourriture(Marchandises aliment) {
+		if (nbMarchandises >= nbMaxMarchandises) {
+			afficher("Il n y a plus de place dans cette entrepot");
+		} else {
+			entrepot[nbMarchandises] = aliment;
+			nbMarchandises++;
+		}
+	}
+
+	public void changerQuantite(Marchandises aliment, int quantite) {
+		for (int i = 0; i < nbMarchandises; i++) {
+			if (aliment == entrepot[i]) {
+				entrepot[i].setQuantite(entrepot[i].getQuantite() + quantite);
+			} 
+		}
+	}
 }
