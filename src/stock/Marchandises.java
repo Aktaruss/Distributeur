@@ -1,22 +1,24 @@
 package stock;
 
 public class Marchandises {
-	private int quantite;
-	private String mesure;
-	private String nom;
+	protected double quantite;
+	protected String mesure;
+	protected String nom;
+	protected double prix;
 
-	public Marchandises(int quantite, String mesure, String nom) {
+	public Marchandises(double quantite, String mesure, String nom, double prix) {
 		super();
 		this.quantite = quantite;
 		this.mesure = mesure;
 		this.nom = nom;
+		this.prix = prix;
 	}
 
-	public int getQuantite() {
+	public double getQuantite() {
 		return quantite;
 	}
 
-	public void setQuantite(int quantite) {
+	public void setQuantite(double quantite) {
 		this.quantite = quantite;
 	}
 
@@ -36,12 +38,20 @@ public class Marchandises {
 		this.nom = nom;
 	}
 
-	public void afficher(String texte) {
+	public double getPrix() {
+		return prix;
+	}
+
+	public void setPrix(double prix) {
+		this.prix = prix;
+	}
+
+	protected void afficher(String texte) {
 		System.out.println(texte);
 	}
 
 	public void afficherMarchandise() {
-		afficher("Il y a " + quantite + " " + mesure + " de " + nom + ".");
+		afficher(nom + " : " + quantite + mesure + " a " + prix + " eur/" + mesure + ".");
 	}
 
 }

@@ -1,9 +1,10 @@
 package stock;
 
-public class Huile extends Marchandises {
+public class Huile extends Liquide {
 
-	public Huile(int quantite, String nom) {
-		super(quantite, "l", nom);
+	public Huile(double quantite, String nom, double prix) {
+		super(quantite, nom, prix);
 	}
+	
 
 }

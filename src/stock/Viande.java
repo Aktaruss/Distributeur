@@ -1,9 +1,9 @@
 package stock;
 
-public class Viande extends Marchandises {
+public class Viande extends Solide {
 
-	public Viande(int quantite, String nom) {
-		super(quantite, "kg", nom);
+	public Viande(double quantite, String nom, double prix) {
+		super(quantite, nom, prix);
 	}
 
 }

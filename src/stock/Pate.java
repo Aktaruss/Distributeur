@@ -1,9 +1,9 @@
 package stock;
 
-public class Pate extends Marchandises {
+public class Pate extends Solide {
 
-	public Pate(int quantite, String nom) {
-		super(quantite, "kg", nom);
+	public Pate(double quantite, String nom, double prix) {
+		super(quantite, nom, prix);
 	}
 
 }
