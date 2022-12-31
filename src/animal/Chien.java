@@ -2,7 +2,7 @@ package animal;
 
 public class Chien extends Carnivore {
 	private String sexe;
-	
+
 	public void changerK1(String race) {
 		switch (race) {
 		case "Chiens nordiques":
@@ -23,25 +23,25 @@ public class Chien extends Carnivore {
 		}
 	}
 
-	public void changerK2(String etat) {
+	public void changerK4(String etat) {
 		switch (etat) {
 		case "Lethargique":
-			k2 = 0.7;
+			k4 = 0.7;
 			break;
 		case "Tres calme":
-			k2 = 0.8;
+			k4 = 0.8;
 			break;
 		case "Calme":
-			k2 = 0.9;
+			k4 = 0.9;
 			break;
 		case "Actif":
-			k2 = 1.1;
+			k4 = 1.1;
 			break;
 		case "Hyperactif":
-			k2 = 1.2;
+			k4 = 1.2;
 			break;
 		default:
-			k2 = 1;
+			k4 = 1;
 			break;
 		}
 	}
@@ -56,7 +56,7 @@ public class Chien extends Carnivore {
 	}
 
 	private double calculBEE() {
-		return 100 * (Math.pow(poids, 0.75)) * k1 * k2;
+		return 130 * (Math.pow(poids, 0.75)) * k1 * k2 * k3 * k4;
 	}
 
 	private double calculBP(double bee) {

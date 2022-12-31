@@ -47,4 +47,20 @@ public class Carnivore {
 	public void calculPortion() {
 		// sert juste a etre redefini dans chien et chat
 	}
+
+	public void changerK1(String race) {
+		// sert juste a etre redefini dans chien et chat
+	}
+
+	public void changerK2(String age) {
+		// sert juste a etre redefini dans chien et chat
+	}
+
+	public void changerK3(String corpulence) {
+		// sert juste a etre redefini dans chien et chat
+	}
+
+	public void changerK4(String etat) {
+		// sert juste a etre redefini dans chien et chat
+	}
 }
